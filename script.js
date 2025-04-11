@@ -1,7 +1,22 @@
-const btn=document.querySelector("#btn");
-btn.addEventListener("click",()=>{
-    alert("처음클릭!");
+const colorSelect = document.querySelector("#colorSelect");
+const colorBox = document.querySelector("#colorBox");
+
+colorBox.style.width = "100px";
+colorBox.style.height = "100px";
+colorBox.style.backgroundColor = "gray";
+colorBox.style.marginTop = "10px";
+
+colorSelect.addEventListener("change", (e) => {
+  console.log(e);
+  colorBox.style.backgroundColor = e.target.value;
 });
-btn.addEventListener('click',()=>{
-    alert("두번째 클릭!")
+
+const nameForm=document.querySelector("#nameForm");
+const nameInput=document.querySelector('#nameInput');
+const submitResult=document.querySelector("#submitResult");
+
+nameForm.addEventListener("submit",(e)=>{
+    console.log(e);
+    e.preventDefault();
+    submitResult.innerText=  `안녕하세요, ${nameInput.value}님!`;
 })
